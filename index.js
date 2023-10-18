@@ -12,6 +12,9 @@ app.get("/", (request, response) => {
 	response.send("Hello World");
 });
 
+const someImportedRouter = require("./controllers/PokemonController.js");
+app.use("/pokemon", someImportedRouter);
+
 // activate the server
 app.listen(PORT, HOST, () => {
 	console.log("Server is running: " + PORT);
